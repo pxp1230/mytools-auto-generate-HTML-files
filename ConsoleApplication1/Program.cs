@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -17,9 +17,8 @@ namespace ConsoleApplication1
         static Process p;
         static void Md2Html(FileInfo file)
         {
-            string raw_name = file.Name.Substring(0, file.Name.LastIndexOf("."));
             string raw_fullName = file.FullName.Substring(0, file.FullName.LastIndexOf("."));
-            string pandoc_param = string.Format(pandoc_param_raw, raw_name, raw_fullName);
+            string pandoc_param = string.Format(pandoc_param_raw, raw_fullName);
             if (p == null)
             {
                 p = new Process();
@@ -42,7 +41,7 @@ namespace ConsoleApplication1
             if (args != null && args.Length == 1)
             {
                 //header.txt必须是utf-8编码
-                pandoc_param_raw = "-s -f markdown_github -H \"" + Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Windows), "header.txt") + "\" -T \"{0}\" -t html5 \"{1}.md\" > \"{1}.html\"";
+                pandoc_param_raw = "\"{0}.md\" -s -f gfm+hard_line_breaks -H \"" + Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Windows), "header.txt") + "\" -t html5 -o \"{0}.html\"";
                 string path = args[0];
                 DirectoryInfo rootDirectory = new DirectoryInfo(path);
                 FileInfo curFile = new FileInfo(path);
