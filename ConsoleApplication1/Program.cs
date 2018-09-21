@@ -36,7 +36,7 @@ namespace ConsoleApplication1
             //示例：
 #if DEBUG
             args = new string[1];
-            args[0] = @"F:\pxp1230.github.io";
+            args[0] = @"G:\coding.net\GhostCTO.coding.me";
 #endif
             if (args != null && args.Length == 1)
             {
@@ -149,7 +149,14 @@ namespace ConsoleApplication1
                             sr.Close();
                             int from = str.IndexOf("<body>"), to = str.IndexOf("</body>") + 7;
                             XmlDocument xmlDoc = new XmlDocument();
-                            xmlDoc.LoadXml(str.Substring(from, to - from));
+                            try
+                            {
+                                xmlDoc.LoadXml(str.Substring(from, to - from));
+                            }
+                            catch (Exception)
+                            {
+                                continue;
+                            }
                             XmlNodeList x = xmlDoc.DocumentElement.SelectNodes("//tr");
                             foreach (XmlNode y in x)
                             {
