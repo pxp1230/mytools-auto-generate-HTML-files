@@ -25,6 +25,10 @@ namespace ConsoleApplication1
                 p.StartInfo.FileName = "cmd";//必须用cmd启动pandoc
                 p.StartInfo.CreateNoWindow = true;
                 p.StartInfo.UseShellExecute = false;
+                p.StartInfo.RedirectStandardInput = true;
+                p.StartInfo.RedirectStandardOutput = true;
+                p.StartInfo.RedirectStandardError = true;
+                p.StartInfo.StandardOutputEncoding = Encoding.UTF8;
             }
             p.StartInfo.Arguments = "/c pandoc " + pandoc_param;
             p.Start();
@@ -36,7 +40,7 @@ namespace ConsoleApplication1
             //示例：
 #if DEBUG
             args = new string[1];
-            args[0] = @"G:\coding.net\GhostCTO.coding.me";
+            args[0] = @"G:\coding.net\GhostCTO.coding.me\Bookmarks";
 #endif
             if (args != null && args.Length == 1)
             {
