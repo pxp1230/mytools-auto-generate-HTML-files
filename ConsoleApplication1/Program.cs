@@ -40,7 +40,7 @@ namespace ConsoleApplication1
             //示例：
 #if DEBUG
             args = new string[1];
-            args[0] = @"G:\coding.net\GhostCTO.coding.me\Bookmarks";
+            args[0] = @"G:\coding.net\GhostCTO.coding.me\Project Management";
 #endif
             if (args != null && args.Length == 1)
             {
@@ -281,6 +281,8 @@ namespace ConsoleApplication1
         {
             if (x.LastWriteTime < y.LastWriteTime)
                 return 1;
+            else if (x.LastWriteTime == y.LastWriteTime)
+                return 0;
             else
                 return -1;
         }
