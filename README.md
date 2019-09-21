@@ -4,7 +4,8 @@
 
 注意：
 * 放到Windows文件夹下：`pandoc.exe`
-	* 从 http://www.pandoc.org/installing.html#windows 获得
+	* 从 https://www.pandoc.org/installing.html#windows 获得
+	* 或从 https://github.com/jgm/pandoc/releases 下载 pandoc-windows-x86_64.zip
 * 放到C盘根目录下：`highlight\highlight.zip`
 	* 从 https://highlightjs.org/download/ 获得
 * 放到C盘根目录下：`jquery.tocify.js-master\jquery.tocify.js-master.zip`
