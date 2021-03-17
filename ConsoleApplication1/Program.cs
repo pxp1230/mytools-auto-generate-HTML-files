@@ -304,10 +304,11 @@ namespace ConsoleApplication1
 <title>" + (right_path != "" ? cur_dir_name + " - " : "") + gitFolderName + "</title>");
             builder.Append(@"<meta charset='UTF-8'/>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no'/>
-<script type='text/javascript' src='file:///storage/emulated/0/pxp1230.github.io.js'></script>
 <script type='text/javascript' src='file:///C:/pxp1230.github.io.js'></script>
 <script type='text/javascript'>
-if(window.location.protocol!='file:'){var d=document,s=d.createElement('script');s.src='/pxp1230.github.io.js';d.head.appendChild(s)}
+var d=document;
+if(window.location.hostname==='127.0.0.1'){var s=d.createElement('script');s.src='/pxp1230.github.io.local.js';d.head.appendChild(s);}
+else if(window.location.protocol!='file:'){var s=d.createElement('script');s.src='/pxp1230.github.io.js';d.head.appendChild(s);}
 </script>
 <style type='text/css'>
 body{margin:10px;font:12px 'Hiragino Sans GB','Microsoft YaHei','微软雅黑',tahoma,arial,simsun,'宋体';color:#1A1A1A;background:#1A1A1A;}a{color:#00CCFF;text-decoration:none;}a:hover{text-decoration:underline;}table,.bar{width:100%;max-width:700px;padding:0;margin:0 auto;border-style:none;border-spacing:10px 1px;}td{background:#454545;font-size:12px;padding:6px 12px;box-shadow:10px 10px 20px #000;}.right{float:right;margin:10px;}.right,.right a{font-weight:bold;color:#005266;}.clear{clear:both;}.time{width:70px;text-align:center;white-space:nowrap;}
